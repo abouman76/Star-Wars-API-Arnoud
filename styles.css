@@ -19,7 +19,7 @@ body {
 h1 {
     display: flex;
     justify-content: center;
-    color: red;
+    color: gold;
 }
 
 .container {
@@ -28,15 +28,24 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#character-container {
 
 }
 
-/*#info-field {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    flex-direction: column;*/
-/*}*/
+#info-field {
+   max-width: 400px;
+}
+
+#input-element {
+    width: 250px;
+}
+
+#button-element {
+    width: 100px;
+    cursor: pointer;
+}
 
 #name-result {
     display: flex;

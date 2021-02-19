@@ -12,13 +12,17 @@
     <div class="container">
 
         <span id="info-field">
-        <input id="input-element" type="text" class="search-field" placeholder="Enter name of a Star Wars figure">
-        <button id="butten-element" type="button" class="search-button">Search</button>
+            <input id="input-element" type="text" class="search-field" placeholder="Enter name of a Star Wars figure">
+            <button id="button-element" type="button" class="search-button">Search</button>
         </span>
 
-        <div id="name-result"></div>
+        <div id="character-container" class="text-character"></div>
+
+        <p id="error-msg"></p>
 
     </div>
+
+    <div id="name-result"></div>
 
     <script src="./node_modules/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
