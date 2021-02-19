@@ -32,7 +32,13 @@ async function fetchDataStarWars() {
             // console.log("1 actor at a time?", character);
 
             const nameAndHeight = `${character.name} is one of Star Wars characters and his or her height is ${character.height} cm.`
-            console.log("NAME and HEIGHT", nameAndHeight);
+            // console.log("NAME and HEIGHT", nameAndHeight);
+
+            const characterInfo = document.createElement("li");
+            characterInfo.textContent = nameAndHeight;
+            console.log("INFO", characterInfo);
+
+            names.appendChild(characterInfo);
         }
 
     }
