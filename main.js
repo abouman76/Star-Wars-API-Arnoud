@@ -6,8 +6,8 @@
 // 5. [x] .gitignore maken.
 // 6. [x] AXIOS installeren. _(library)_
 // 7. [x] AXIOS script linken.
-// 8. [ ] Een async function maken en **aanroepen**!
-// 9. [ ] Request maken met AXIOS.
+// 8. [x] Een async function maken en **aanroepen**!
+// 9. [x] Request maken met AXIOS.
 // 10. [ ] Afwachten tot de data er is.
 // 11. [ ] Data weergeven in de DOM.
 //  - [ ] Lijst maken met een id.
@@ -19,7 +19,27 @@
 
 async function fetchDataStarWars() {
     const response = await axios.get(`https://swapi.dev/api/people/`);
-    console.log("RESPONSE", response, response.data);
+    console.log("RESPONSE", response);
+    // console.log("Response DATA", response.data);
+    const starWarsData = response.data.results;
+    console.log("Data", starWarsData);
+
+    try {
+        const names = document.getElementById("name-result");
+        // console.log(names);
+
+        for (const character of starWarsData) {
+            // console.log("1 actor at a time?", character);
+
+            const nameAndHeight = `${character.name} is one of Star Wars characters and his or her height is ${character.height} cm.`
+            console.log("NAME and HEIGHT", nameAndHeight);
+        }
+
+    }
+
+    catch(error) {
+        console.log("ERROR");
+    };
 
 }
 fetchDataStarWars();
