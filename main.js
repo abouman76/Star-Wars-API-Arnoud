@@ -19,5 +19,7 @@
 
 async function fetchDataStarWars() {
     const response = await axios.get(`https://swapi.dev/api/people/`);
-    console.log("RESPONSE", response);
+    console.log("RESPONSE", response, response.data);
+
 }
+fetchDataStarWars();
