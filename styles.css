@@ -33,10 +33,15 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: gold;
 }
 
 #character-container {
-    color: gold;
+
+}
+
+#display-text {
+
 }
 
 #info-field {
@@ -48,6 +53,7 @@ h3 {
 .text-character {
     backdrop-filter: blur(50px);
     border-radius: 20px;
+    color: gold;
 }
 
 #input-element {

@@ -25,7 +25,7 @@
 const searchButton = document.getElementById("button-element");
 searchButton.addEventListener("click", fetchDataStarWars);
 
-const personInfo = document.getElementById("character-container");
+const personInfo = document.getElementById("displayText");
 
 const searchInput = document.getElementById("input-element");
 searchInput.addEventListener("keypress", handleKeyPress);
@@ -36,6 +36,13 @@ function handleKeyPress(event) {
         fetchDataStarWars();
     }
 }
+
+function removeChild(node) {
+    while (node.firstChild) {
+        node.removeChild(node.lastChild)
+    }
+}
+
     async function fetchDataStarWars() {
         const outComeElement = searchInput.value; //=> de invoer is altijd met .value
         // console.log("OUTCOME", outComeElement, !outComeElement);
@@ -43,7 +50,7 @@ function handleKeyPress(event) {
             return
         }
 
-        const errorMessage = document.getElementById("error-msg");
+        const errorMessage = document.getElementById("error-m.sg");
         errorMessage.textContent = "";
 
         const response = await axios.get(`https://swapi.dev/api/people?search=${outComeElement}`);
@@ -60,6 +67,10 @@ function handleKeyPress(event) {
 
         searchInput.value = "";
 
+        // displayText.innerHTML = "";
+
+       removeChild(displayText);
+
         try {
             // const names = document.getElementById("name-result");
             // console.log(names);
@@ -68,12 +79,12 @@ function handleKeyPress(event) {
                 // console.log("1 actor at a time?", character);
 
                 const nameAndHeight = `${character.name} is one of Star Wars characters and his or her height is ${character.height} cm.`
+                
                 // console.log("NAME and HEIGHT", nameAndHeight);
 
                 const characterInfo = document.createElement("li");
                 characterInfo.textContent = nameAndHeight;
                 console.log("INFO", characterInfo);
-
                 personInfo.appendChild(characterInfo);
             }
 
