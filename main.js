@@ -16,6 +16,11 @@
 //       - [x] Een li aanmaken.
 //       - [x] textContent toevoegen.
 //        - [x] li appenden.
+// [] refresh bij nieuwe entry
+// [] meer styling, margin etc..
+// [] homeworld toegevoegen via nieuwe dom en element in html
+// [] url toevoegen via nieuwe dom en element in html
+
 
 const searchButton = document.getElementById("button-element");
 searchButton.addEventListener("click", fetchDataStarWars);
@@ -32,7 +37,7 @@ function handleKeyPress(event) {
     }
 }
     async function fetchDataStarWars() {
-        const outComeElement = searchInput.value;
+        const outComeElement = searchInput.value; //=> de invoer is altijd met .value
         // console.log("OUTCOME", outComeElement, !outComeElement);
         if(!outComeElement) {
             return
@@ -42,16 +47,16 @@ function handleKeyPress(event) {
         errorMessage.textContent = "";
 
         const response = await axios.get(`https://swapi.dev/api/people?search=${outComeElement}`);
-         console.log("RESPONSE", response, response.data.count === 0 );
+         // console.log("RESPONSE", response, response.data.count === 0 );
          if(response.data.count === 0){
              return errorMessage.textContent = `This character does not exists in Star Wars. Try again!`;
          }
 
-
         // console.log("Response DATA", response.data);
 
         let starWarsData = response.data.results;
-        // console.log("Data", starWarsData);
+        console.log(response.data);
+        console.log("Data", starWarsData);
 
         searchInput.value = "";
 

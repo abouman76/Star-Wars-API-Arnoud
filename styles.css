@@ -20,6 +20,11 @@ h1 {
     display: flex;
     justify-content: center;
     color: gold;
+    margin: 20px;
+}
+
+h3 {
+    color: gold;
 }
 
 .container {
@@ -31,24 +36,41 @@ h1 {
 }
 
 #character-container {
-
+    color: gold;
 }
 
 #info-field {
-   max-width: 400px;
+    max-width: 400px;
+    display: flex;
+    padding: 20px;
+}
+
+.text-character {
+    backdrop-filter: blur(50px);
+    border-radius: 20px;
 }
 
 #input-element {
     width: 250px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 20px;
 }
 
 #button-element {
     width: 100px;
     cursor: pointer;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 20px;
 }
 
 #name-result {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+li {
+    list-style: none;
 }
