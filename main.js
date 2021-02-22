@@ -50,7 +50,7 @@ function removeChild(node) {
             return
         }
 
-        const errorMessage = document.getElementById("error-m.sg");
+        const errorMessage = document.getElementById("error-msg");
         errorMessage.textContent = "";
 
         const response = await axios.get(`https://swapi.dev/api/people?search=${outComeElement}`);
@@ -62,12 +62,10 @@ function removeChild(node) {
         // console.log("Response DATA", response.data);
 
         let starWarsData = response.data.results;
-        console.log(response.data);
+        // console.log(response.data);
         console.log("Data", starWarsData);
 
         searchInput.value = "";
-
-        // displayText.innerHTML = "";
 
        removeChild(displayText);
 
@@ -77,15 +75,30 @@ function removeChild(node) {
 
             for (const character of starWarsData) {
                 // console.log("1 actor at a time?", character);
+                // console.log("URL", character.url);
 
                 const nameAndHeight = `${character.name} is one of Star Wars characters and his or her height is ${character.height} cm.`
-                
                 // console.log("NAME and HEIGHT", nameAndHeight);
+                const skinAndEyes = `This character has a ${character.skin_color} skin color and ${character.eye_color} eyes.`
 
-                const characterInfo = document.createElement("li");
+                const weightInKg = `This character weights ${character.mass} kg`;
+                // console.log("GEWICHT", weightInKg);
+
+                const characterInfo = document.createElement("p");
                 characterInfo.textContent = nameAndHeight;
-                console.log("INFO", characterInfo);
+                // console.log("INFO", characterInfo);
                 personInfo.appendChild(characterInfo);
+
+                const skinEyeInfo = document.createElement("p");
+                skinEyeInfo.textContent = skinAndEyes;
+                // console.log("Skin-Eyes", skinAndEyes);
+                personInfo.appendChild(skinEyeInfo);
+
+                const massCharacter = document.createElement("p");
+                massCharacter.textContent = weightInKg;
+                // console.log("MASS", weightInKg);
+                personInfo.appendChild(massCharacter);
+
             }
 
         } catch (error) {

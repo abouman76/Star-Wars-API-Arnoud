@@ -37,7 +37,8 @@ h3 {
 }
 
 #character-container {
-
+    /*backdrop-filter: blur(50px);*/
+    /*border-radius: 20px;*/
 }
 
 #display-text {
@@ -51,9 +52,8 @@ h3 {
 }
 
 .text-character {
-    backdrop-filter: blur(50px);
-    border-radius: 20px;
-    color: gold;
+    /*backdrop-filter: blur(50px);*/
+    /*border-radius: 20px;*/
 }
 
 #input-element {
